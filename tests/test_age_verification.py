@@ -6,3 +6,8 @@ def test_raise_exception_if_input_empty():
     with pytest.raises(Exception) as e: 
         age_verification("") 
     assert str(e.value) == "Please enter your date of birth"
+
+def test_raise_exception_if_input_incorrect_format():
+    with pytest.raises(Exception) as e:
+        age_verification("12-12-12")
+    assert str(e.value) == "Please enter your date of birth in YYYY-MM-DD format"
