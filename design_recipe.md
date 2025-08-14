@@ -27,6 +27,11 @@ _Include the name of the function, its parameters, return value, and side effect
 
 ```python
 
+def age_verification(): 
+    # Parameters: date of birth `YYYY-MM-DD` 
+    # Return: str access granted or access denied based on the input
+    # Side-effects: NA
+
 ```
 
 ## 3. Create Examples as Tests
@@ -34,6 +39,22 @@ _Include the name of the function, its parameters, return value, and side effect
 _Make a list of examples of what the function will take and return._
 
 ```python
+
+# raise exception if input is empty 
+
+age_verification("") => "Please enter your date of birth"
+
+# raise exception if input is in incorrect format 
+
+age_verification("12-12-12") => "Please enter your date of birth in YYYY-MM-DD format"
+
+# if input is correct and user is over 16, we want to return "access granted"
+
+age_verification("2009-01-01") => "Acccess granted"
+
+# if input is correct and user is under 16, return "access denied, you are {age}, required age is 16"
+
+age_verification("2025-01-01") => f"Access denied, you are {age}, required age is 16" 
 
 ```
 
